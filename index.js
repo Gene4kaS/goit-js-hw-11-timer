@@ -20,16 +20,13 @@
       }, 1000);
 
       updateClock(time) {
-        const days = Math.floor(time / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const mins = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
-        const secs = Math.floor((time % (1000 * 60)) / 1000);
-        refs.days.textContent = `${days}`;
-        refs.hours.textContent = `${hours}`;
-        refs.mins.textContent = `${mins}`;
-        refs.secs.textContent = `${secs}`;
-    }
-
+        const days = this.pad(Math.floor(time / (1000 * 60 * 60 * 24)));
+        const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+        const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
+        const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
+        refs.clock.textContent = `${days} days : ${hours} hours : ${mins} minutes : ${secs} seconds`;
+      }
+      
     pad(value) {
         return String(value).padStart(2, "0");
     }
@@ -39,10 +36,10 @@
             refs.clock.textContent = "Finish";
           }
     }
-};
-
+}   
 
 new CountdownTimer({
     selector: '#timer-1',
     targetDate: new Date('Nov 17, 2021'),
   });
+
