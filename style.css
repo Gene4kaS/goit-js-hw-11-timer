@@ -1,0 +1,20 @@
+.timer {
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    font-size: 48px;
+    font-weight: 600;
+    min-width: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+  .label {
+    font-size: 24px;
+    font-weight: 300;
+  }

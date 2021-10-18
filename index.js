@@ -1,6 +1,7 @@
+// import './style.css';
 
   const refs = {
-    clock: document.getElementById("timer-1"),
+    clock: document.querySelector(".timer"),
     days: document.querySelector('.value[data-value="days"]'),
     hours: document.querySelector('.value[data-value="hours"]'),
     mins: document.querySelector('.value[data-value="mins"]'),
@@ -26,7 +27,7 @@
         const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
         refs.clock.textContent = `${days} days : ${hours} hours : ${mins} minutes : ${secs} seconds`;
       }
-      
+
     pad(value) {
         return String(value).padStart(2, "0");
     }
